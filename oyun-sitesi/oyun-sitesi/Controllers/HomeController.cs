@@ -1,4 +1,5 @@
-﻿using System;
+﻿using oyun_sitesi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace oyun_sitesi.Controllers
 {
     public class HomeController : Controller
     {
+        // verileri çekebilmek için
+        private EFCodeEntities db = new EFCodeEntities();
         public ActionResult Index()
         {
-            return View();
+            return View(db.Games.ToList());
         }
 
         public ActionResult About()

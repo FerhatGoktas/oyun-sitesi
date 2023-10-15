@@ -2,6 +2,26 @@
     ViewBag.Title = "Home Page";
 }
 
+@Model List<Games.Models.Game>
+
+<h2>Games</h2>
+
+<table class="table">
+    <tr>
+        <th>Game ID</th>
+        <th>Game Name</th>
+        <!-- Diğer kolonlar eklenebilir -->
+    </tr>
+    @foreach (var game in Model)
+    {
+        <tr>
+            <td>@game.game_Id</td>
+            <td>@game.game_Name</td>
+            <!-- Diğer kolonlar eklenebilir -->
+        </tr>
+    }
+</table>
+
 <main>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">Efsane Oyun</h1>
